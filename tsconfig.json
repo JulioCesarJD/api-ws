@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "declaration": true,
+        "declarationMap": true,
+        "moduleResolution": "Node",
+        "importHelpers": true,
+        "target": "ES2021",
+        "types": ["node"]
+
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["**/*.espc.ts", "**/*.test", "node_modules"]
+}
