@@ -72,7 +72,7 @@ const main = async () => {
 
     // Iniciar el servidor Express
     const PORT = process.env.PORT || 4000;
-    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`http://107.21.150.152:${PORT}`));
   
 
     
