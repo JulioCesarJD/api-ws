@@ -30,6 +30,9 @@
 import express from 'express';
 import { createBot, createFlow, createProvider, MemoryDB, addKeyword } from "@bot-whatsapp/bot";
 import { BaileysProvider } from "@bot-whatsapp/provider-baileys";
+import { join } from "path";
+import { createReadStream } from "fs";
+
 
 const app = express();
 
@@ -59,11 +62,20 @@ const main = async () => {
         provider
     });
 
+    app.get("/get-qr", async (_, res) => {
+        const YOUR_PATH_QR = join(process.cwd(), `bot.qr.png`);
+        const fileStream = createReadStream(YOUR_PATH_QR);
+    
+        res.writeHead(200, { "Content-Type": "image/png" });
+        fileStream.pipe(res);
+      });
+
     // Iniciar el servidor Express
-    const PORT = 4003; // Puerto en el que se ejecutará el servidor Express
-    app.listen(PORT, () => {
-        console.log(`Servidor Express iniciado en el puerto ${PORT}`);
-    });
+    const PORT = process.env.PORT || 4000;
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+  
+
+    
 };
 
 main();
