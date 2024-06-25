@@ -27,6 +27,7 @@
 // main()
 
 
+
 import express from 'express';
 import { createBot, createFlow, createProvider, MemoryDB, addKeyword } from "@bot-whatsapp/bot";
 import { BaileysProvider } from "@bot-whatsapp/provider-baileys";
@@ -72,7 +73,7 @@ const main = async () => {
 
     // Iniciar el servidor Express
     const PORT = process.env.PORT || 4008;
-    app.listen(PORT, () => console.log(`http://107.21.150.152:${PORT}`));
+    app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
   
 
     
