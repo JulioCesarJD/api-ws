@@ -27,7 +27,6 @@
 // main()
 
 
-
 import express from 'express';
 import { createBot, createFlow, createProvider, MemoryDB, addKeyword } from "@bot-whatsapp/bot";
 import { BaileysProvider } from "@bot-whatsapp/provider-baileys";
@@ -45,7 +44,7 @@ const main = async () => {
     const botFlow = createFlow([flowBienvenida]);
 
     // Endpoint GET para enviar mensajes personalizados
-    app.get('/enviar-whatsapp-mensaje', async (req, res) => {
+    app.post('/enviar-whatsapp-mensaje', async (req, res) => {
         const { celular, mensaje } = req.query; // Recibimos el número y el mensaje desde la URL
 
         try {
